@@ -17,17 +17,16 @@ $ git commit -m "file1_one commit"
 $ touch file2_one.txt
 $ touch file2_two.txt
 $ touch file2_three.txt
+$ rm file2_two.txt
 $ git add file2_one.txt
-$ git add file2_two.txt
+$ git add file2_three.txt
 $ git diff
-$ git commit -m "file2_one and file2_two commit"
+$ git commit -m "file2_one and file2_three commit"
 
 $ touch file3_one.txt
-$ touch file3_two.txt
 $ git add file3_one.txt
-$ git add file3_two.txt
 $ git diff
-$ git commit -m "file2_one and file2_two commit"
+$ git commit -m "file3_one commit"
 
 
 create changes and revert those changes using git when those changes are not added to staging are
