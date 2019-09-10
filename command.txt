@@ -162,6 +162,19 @@ $ git commit -m 'changed the content of file3_one.txt'
 $ git status
 
 18. rebase branch "master" in "feature2" (make some conflicts by changing same file on same line in both the branches) .
+$ git checkout feature2
+change the file3_one.txt content to create conflict 
+$ git status
+$ git add file3_one.txt
+$ git status
+$ git diff
+$ git commit -m 'changed file3_one.txt content'
+$ git status
+$ git rebase master
+remove the conflicts on file3_one.txt
+$ git add file3_one.txt
+$ git rebase --continue
+
 find the differences between "merge" and "rebase" in above cases.
 Use git stash
 create a repository on github for your working repository and push changes on remote repository.
