@@ -179,4 +179,26 @@ $ git rebase --continue
 While merging feature1 to master the commits of feature1 branch is not showing in the branch master but in case of rebasing master to feature2 the commits of feature2 has been rewritten so that the master branch is a part of commit history.
 
 20. Use git stash
-create a repository on github for your working repository and push changes on remote repository.
+changed the content of file2_one.txt
+$ git status
+$ git add file2_one.txt
+$ git status
+$ git diff
+$ git stash
+added different content to file2_one.txt
+$ git status
+$ git add file2_one.txt
+$ git status
+$ git diff
+$ git commit -m 'change file1_two content after stashing'
+$ git status
+$ git statsh apply
+remove the confilicts
+$ git status
+$ git add file2_one.txt
+$ git status
+$ git diff
+$ git commit -m 'removing conflict after stash apply'
+$ git status
+
+21. create a repository on github for your working repository and push changes on remote repository.
