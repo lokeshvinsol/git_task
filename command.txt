@@ -1,0 +1,50 @@
+$ mkdir git_task
+$ cd git_task
+$ git init
+
+1. Create a repository
+$ mkdir repo_one
+
+2. Make some changes -- add some files, change content of some files
+$ touch file1_one.txt
+$ touch file1_two.txt
+
+3. commit changes
+$ git add file1_one.txt  	//ignoring file1_two.txt
+$ git diff
+$ git commit -m "file1_one commit"
+ 
+4. repeat steps 1-3 for 2 more times. try to remove and ignore some files . Use git diff before each commit.
+$ mkdir repo_two
+$ touch file2_one.txt
+$ touch file2_two.txt
+$ git add file2_one.txt
+$ git add file2_two.txt
+$ git diff
+$ git commit -m "file2_one and file2_two commit"
+
+$ mkdir repo_three
+$ touch file3_one.txt
+$ touch file3_two.txt
+$ git add file3_one.txt
+$ git add file3_two.txt
+$ git diff
+$ git commit -m "file2_one and file2_two commit"
+
+
+create changes and revert those changes using git when those changes are not added to staging are
+create changes and revert those changes after adding changes to staging area
+create change and revert those changes after committing those changes .
+Check repository status before adding changes to staging area, after adding changes to staging area and after committing changes .
+Display all the commits .
+Display a specific commit .
+create branches called "feature1" and "feature2" from master. 11 . Delete branch "feature2".
+Make some commits on "feature1".
+Make some commits on branch "master".
+merge branch "feature1" in "master" (make some conflicts by changing same file on same line in both the branches) 15.create branch "feature2" from master .
+Make some commits on "feature2".
+Make some commits on branch "master".
+rebase branch "master" in "feature2" (make some conflicts by changing same file on same line in both the branches) .
+find the differences between "merge" and "rebase" in above cases.
+Use git stash
+create a repository on github for your working repository and push changes on remote repository.
