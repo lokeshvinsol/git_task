@@ -1,3 +1,4 @@
 I am three One. And i am going to be different
 I am on master
 I am changing for conflict with feature2
+I am on feature2 branch

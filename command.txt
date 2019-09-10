@@ -10,38 +10,158 @@ $ touch file1_two.txt
 
 3. commit changes
 $ git add file1_one.txt  	//ignoring file1_two.txt
+$ git status
 $ git diff
+$ git status
 $ git commit -m "file1_one commit"
+$ git status
  
 4. repeat steps 1-3 for 2 more times. try to remove and ignore some files . Use git diff before each commit.
 $ touch file2_one.txt
 $ touch file2_two.txt
 $ touch file2_three.txt
 $ rm file2_two.txt
+$ git status
 $ git add file2_one.txt
 $ git add file2_three.txt
 $ git diff
+$ git status
 $ git commit -m "file2_one and file2_three commit"
+$ git status
 
 $ touch file3_one.txt
+$ git status
 $ git add file3_one.txt
 $ git diff
+$ git status
 $ git commit -m "file3_one commit"
+$ git status
 
+5. create changes and revert those changes using git when those changes are not added to staging are
+changed the file content of file1_one.txt, file2_three.txt and file3_one.txt
+$ git status
+$ git checkout -- file1_one.txt
+$ git checkout -- file2_three.txt
+$ git checkout -- file3_one.txt
+$ git status
 
-create changes and revert those changes using git when those changes are not added to staging are
-create changes and revert those changes after adding changes to staging area
-create change and revert those changes after committing those changes .
-Check repository status before adding changes to staging area, after adding changes to staging area and after committing changes .
-Display all the commits .
-Display a specific commit .
-create branches called "feature1" and "feature2" from master. 11 . Delete branch "feature2".
-Make some commits on "feature1".
-Make some commits on branch "master".
-merge branch "feature1" in "master" (make some conflicts by changing same file on same line in both the branches) 15.create branch "feature2" from master .
-Make some commits on "feature2".
-Make some commits on branch "master".
-rebase branch "master" in "feature2" (make some conflicts by changing same file on same line in both the branches) .
+6. create changes and revert those changes after adding changes to staging area
+changed the content of file2_one.txt and file2_two.txt
+$ git status
+$ git add file2_one.txt
+$ git add file2_two.txt
+$ git status
+$ git reset HEAD file2_one.txt
+$ git reset HEAD file2_two.txt
+$ git checkout -- file2_one.txt
+$ git checkout -- file2_two.txt
+$ git diff
+$ git status
+$ git commit -m 'changed and revert file2_one.txt, and file2_two content'
+$ git status
+
+7. create change and revert those changes after committing those changes .
+changed the content of file1_three.txt and file3_one.txt
+$ git status
+$ git add file1_two.txt
+$ git add file2_one.txt
+$ git diff
+$ git status
+$ git commit -m 'changed the content of file1_two.txt, and file2_one.txt content'
+$ git revert 'changed the content of file1_two.txt, and file2_one.txt content'
+$ git status
+
+8. Check repository status before adding changes to staging area, after adding changes to staging area and after committing changes.
+
+9. Display all the commits.
+$ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+
+10. Display a specific commit.
+$ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short --since='10 minutes ago'
+$ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short --until='10 minutes ago'
+
+11. create branches called "feature1" and "feature2" from master. 11 . Delete branch "feature2".
+$ git checkout -b 'feature1'
+$ git checkout master
+$ git checkout -b 'feature2'
+
+12. Make some commits on "feature1".
+$ git checkout feature1
+changed the content of file1_one.txt, file2_one.txt 
+$ git status
+$ git add file1_one.txt
+$ git add file2_one.txt
+$ git diff
+$ git status
+$ git commit -m 'changed content of file1_one.txt and file2_one.txt and committing to feature1 branch'
+$ git status
+
+13. Make some commits on branch "master".
+$ git checkout master
+changed the content of file1_two.txt, file3_one.txt
+$ git status
+$ git add file1_two.txt
+$ git add file3_one.txt
+$ git diff
+$ git status
+$ git commit -m 'changed content of file1_two.txt and file3_one.txt and committing to master branch'
+$ git status
+
+14. merge branch "feature1" in "master" (make some conflicts by changing same file on same line in both the branches)
+$ git checkout feature1
+changed the content of file file2_one.txt and file2_two.txt in feature1 branch
+$ git status
+$ git add file2_one.txt
+$ git add file2_two.txt
+$ git status
+$ git diff
+$ git commit -m 'change content on file2_one.txt and file2_two.txt in feature branch before merging'
+$ git status
+$ git checkout master
+changed the content of file file2_one.txt and file2_two.txt in master branch before merging to feature1 to create conflict
+$ git status
+$ git add file2_one.txt
+$ git add file2_two.txt
+$ git status
+$ git diff
+$ git commit -m 'change content on file2_one.txt and file2_two.txt in master branch before merging'
+$ git status
+$ git checkout master
+$ git merge feature1
+removed the conflicts from file2_one.txt and file2_two.txt
+$ git status
+$ git add file2_one.txt 
+$ git add file2_two.txt
+$ git status
+$ git diff
+$ git commit -m 'removed conflict in file2_one.txt and file2_two.txt after merging to feature1'
+$ git status
+
+15.create branch "feature2" from master .
+Already created in step 11
+
+16. Make some commits on "feature2".
+$ git checkout feature2
+changed content of file2_three.txt and created file3_two.txt
+$ touch file3_two.txt
+$ git status
+$ git add file2_three.txt
+$ git add file3_two.txt
+$ git status
+$ git diff
+$ git commit -m 'changed content of file2_thre.txt and created file3_two.txt'
+$ git status
+
+17. Make some commits on branch "master".
+changed the content of file3_one.txt
+$ git status
+$ git add file3_one.txt
+$ git status
+$ git diff
+$ git commit -m 'changed the content of file3_one.txt'
+$ git status
+
+18. rebase branch "master" in "feature2" (make some conflicts by changing same file on same line in both the branches) .
 find the differences between "merge" and "rebase" in above cases.
 Use git stash
 create a repository on github for your working repository and push changes on remote repository.
