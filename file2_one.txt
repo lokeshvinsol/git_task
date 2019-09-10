@@ -1,2 +1,3 @@
 I am two one
 I am in feature1 branch
+I am on master going to merge feature1
