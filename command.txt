@@ -3,7 +3,6 @@ $ cd git_task
 $ git init
 
 1. Create a repository
-$ mkdir repo_one
 
 2. Make some changes -- add some files, change content of some files
 $ touch file1_one.txt
@@ -15,15 +14,14 @@ $ git diff
 $ git commit -m "file1_one commit"
  
 4. repeat steps 1-3 for 2 more times. try to remove and ignore some files . Use git diff before each commit.
-$ mkdir repo_two
 $ touch file2_one.txt
 $ touch file2_two.txt
+$ touch file2_three.txt
 $ git add file2_one.txt
 $ git add file2_two.txt
 $ git diff
 $ git commit -m "file2_one and file2_two commit"
 
-$ mkdir repo_three
 $ touch file3_one.txt
 $ touch file3_two.txt
 $ git add file3_one.txt
