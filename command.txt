@@ -202,7 +202,3 @@ $ git commit -m 'removing conflict after stash apply'
 $ git status
 
 21. create a repository on github for your working repository and push changes on remote repository.
-$ git checkout master
-$ git merger feature2
-
-Pushed the code to the remote repository
