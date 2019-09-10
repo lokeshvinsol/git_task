@@ -1,2 +1,2 @@
 I am Two two. I am changed
-I am on master going to merge feature1
+and going to merge
