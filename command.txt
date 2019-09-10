@@ -175,6 +175,8 @@ remove the conflicts on file3_one.txt
 $ git add file3_one.txt
 $ git rebase --continue
 
-find the differences between "merge" and "rebase" in above cases.
-Use git stash
+19. find the differences between "merge" and "rebase" in above cases.
+While merging feature1 to master the commits of feature1 branch is not showing in the branch master but in case of rebasing master to feature2 the commits of feature2 has been rewritten so that the master branch is a part of commit history.
+
+20. Use git stash
 create a repository on github for your working repository and push changes on remote repository.
